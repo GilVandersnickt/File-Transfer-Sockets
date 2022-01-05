@@ -88,7 +88,7 @@ namespace Ait.FTSock.Server
                 cmbPorts.IsEnabled = false;
                 txtBasePath.IsEnabled = false;
                 btnBasePath.IsEnabled = false;
-                lsbCommunications.ItemsSource = null;
+                lsbCommunications.Items.Clear();
             }
             else
             {
@@ -104,8 +104,11 @@ namespace Ait.FTSock.Server
         }
         private void UpdateListBox()
         {
-            lsbCommunications.ItemsSource = null;
-            lsbCommunications.ItemsSource = serverService.CommunicationStrings;
+            lsbCommunications.Items.Clear();
+            foreach (var communication in serverService.CommunicationStrings)
+            {
+                lsbCommunications.Items.Insert(0, communication);
+            }
         }
         private void StartListening()
         {
