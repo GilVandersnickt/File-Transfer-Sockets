@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ait.FTSock.Server"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="File Transfer over Sockets: Server" Height="450" MinHeight="300" Width="685" MinWidth="685" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
-
+        <GroupBox Header="Server configuration" Margin="10,10,10,0" Height="113" VerticalAlignment="Top"/>
+        <Label Content="IP :" FontWeight="Bold" HorizontalAlignment="Left" Margin="35,37,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbIpAddresses" HorizontalAlignment="Left" Margin="68,41,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="PORT :" FontWeight="Bold" HorizontalAlignment="Left" Margin="206,37,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbPorts" HorizontalAlignment="Left" Margin="259,41,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Base Path :" FontWeight="Bold" HorizontalAlignment="Left" Margin="400,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBasePath" HorizontalAlignment="Left" Margin="476,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnBasePath" Content="..." HorizontalAlignment="Left" Margin="601,43,0,0" VerticalAlignment="Top" Width="25" Click="btnBasePath_Click"/>
+        <Button x:Name="btnStartStop" Content="START" FontWeight="Bold" Background="ForestGreen" Foreground="White" HorizontalAlignment="Left" Margin="35,86,0,0" VerticalAlignment="Top" Width="65" Click="btnStartStop_Click"/>
+        <GroupBox x:Name="gpbCommunications" Header="Communications" Visibility="Hidden" Margin="10,128,10,10">
+            <ListBox x:Name="lsbCommunications"/>
+        </GroupBox>
     </Grid>
 </Window>
