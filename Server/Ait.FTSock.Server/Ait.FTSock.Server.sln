@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ait.FTSock.Server", "Ait.FTSock.Server\Ait.FTSock.Server.csproj", "{E88DD8FC-E0C9-4889-B456-9BEFB0C391F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ait.FTSock.Core", "Ait.FTSock.Core\Ait.FTSock.Core.csproj", "{1350E6BA-3FDD-48A6-8B01-E9CF4FB421A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E88DD8FC-E0C9-4889-B456-9BEFB0C391F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88DD8FC-E0C9-4889-B456-9BEFB0C391F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88DD8FC-E0C9-4889-B456-9BEFB0C391F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E88DD8FC-E0C9-4889-B456-9BEFB0C391F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1350E6BA-3FDD-48A6-8B01-E9CF4FB421A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1350E6BA-3FDD-48A6-8B01-E9CF4FB421A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1350E6BA-3FDD-48A6-8B01-E9CF4FB421A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1350E6BA-3FDD-48A6-8B01-E9CF4FB421A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B3E20D7-A0C5-42BE-90A7-8F52EE620E97}
+	EndGlobalSection
+EndGlobal
