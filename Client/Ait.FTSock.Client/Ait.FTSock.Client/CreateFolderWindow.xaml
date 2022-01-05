@@ -1,0 +1,15 @@
+﻿<Window x:Class="Ait.FTSock.Client.CreateFolderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ait.FTSock.Client"
+        mc:Ignorable="d"
+        Title="Input required" Height="120" Width="580" MinHeight="120" MinWidth="580" MaxHeight="120" MaxWidth="580" >
+    <Grid>
+        <TextBox x:Name="txtFolderName" HorizontalAlignment="Left" Margin="25,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="398" Height="20"/>
+        <Button x:Name="btnCreate" Content="OK" HorizontalAlignment="Left" Margin="443,42,0,0" VerticalAlignment="Top" Click="btnCreate_Click" Width="55"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="503,42,0,0" VerticalAlignment="Top" Click="btnCancel_Click" Width="55"/>
+        <Label Content="Enter folder name:" HorizontalAlignment="Left" Margin="25,11,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
