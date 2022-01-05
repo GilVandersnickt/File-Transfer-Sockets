@@ -5,8 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ait.FTSock.Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        
+        Title="File Transfer over Sockets: Client" Height="718" MinHeight="718" Width="685" MinWidth="685" MaxWidth="685" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
+        <GroupBox Header="Server configuration" Margin="10,10,10,0" Height="113" VerticalAlignment="Top"/>
+        <Label Content="Server IP :" FontWeight="Bold" HorizontalAlignment="Left" Margin="35,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtIpAddress" HorizontalAlignment="Left" Margin="102,43,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Server port :" FontWeight="Bold" HorizontalAlignment="Left" Margin="227,37,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbPorts" HorizontalAlignment="Left" Margin="313,39,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="My username :" FontWeight="Bold" HorizontalAlignment="Left" Margin="457,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsername" Margin="550,43,24,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label x:Name="lblUserId" Background="OldLace" Margin="373,77,24,0" VerticalAlignment="Top" Height="29"/>
+        <Button x:Name="btnConnectDisconnect" Content="Connect" FontWeight="Bold" Background="ForestGreen" Foreground="White" HorizontalAlignment="Left" Margin="35,86,0,0" VerticalAlignment="Top" Width="231" Click="btnConnectDisconnect_Click"/>
+        <GroupBox x:Name="gpbFts" Header="FTS" Visibility="Hidden" Margin="10,128,10,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Active folder" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <Label x:Name="lblActiveFolder" Content="C:\HOWEST" Background="OldLace" HorizontalAlignment="Left" Margin="125,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="479"/>
+                <Button x:Name="btnAddFolder" Content="+" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Left" Margin="348,0,0,0" VerticalAlignment="Center" Height="26" Width="34" Click="btnAddFolder_Click"/>
+                <Label Content="Remote folders (doubleclick to navigate)" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <ListBox x:Name="lsbFolders" Margin="10,41,27,10" Grid.Row="1" SelectionChanged="lsbFolders_SelectionChanged" MouseDoubleClick="lsbFolders_MouseDoubleClick"/>
+                <GroupBox Header="File info" Grid.Row="1" Grid.ColumnSpan="2" Margin="261,35,10,0" Height="126" VerticalAlignment="Top"/>
+                <Label Content="Foldername :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,54,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <Label x:Name="lblFolderName" Grid.Column="1" HorizontalAlignment="Left" Margin="95,52,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="274"/>
+                <Label Content="Full path :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,80,0,0" Grid.Row="1" Height="26" VerticalAlignment="Top"/>
+                <Label x:Name="lblFullPathFolder" Grid.Column="1" HorizontalAlignment="Left" Margin="95,80,0,0" Grid.Row="1" Width="274" Height="26" VerticalAlignment="Top"/>
+                <Label Content="Parent :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,106,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <Label x:Name="lblParent" Grid.Column="1" HorizontalAlignment="Left" Margin="95,106,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="274"/>
+                <Label Content="Remote files (doubleclick to download)" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <ListBox x:Name="lsbFiles" Margin="10,41,27,10" Grid.Row="2" SelectionChanged="lsbFiles_SelectionChanged" MouseDoubleClick="lsbFiles_MouseDoubleClick"/>
+                <GroupBox Header="File info" Grid.Row="2" Grid.ColumnSpan="2" Margin="261,23,10,0" Height="129" VerticalAlignment="Top"/>
+                <Label Content="FileName :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,40,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="lblFileName" Grid.Column="1" HorizontalAlignment="Left" Margin="95,36,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="274"/>
+                <Label Content="Full path :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,64,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="lblFullPathFile" Grid.Column="1" HorizontalAlignment="Left" Margin="95,64,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="274"/>
+                <Label Content="Filesize :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,90,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="lblFileSize" Grid.Column="1" HorizontalAlignment="Left" Margin="95,90,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="274"/>
+                <Label Content="Date :" Grid.Column="1" HorizontalAlignment="Left" Margin="15,116,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Label x:Name="lblDate" Grid.Column="1" HorizontalAlignment="Left" Margin="95,116,0,0" Grid.Row="2" VerticalAlignment="Top" Height="26" Width="274"/>
+                <GroupBox Header="File upload" Grid.Row="2" Grid.ColumnSpan="2" Margin="261,157,10,10"/>
+                <Button x:Name="btnSelectFile" Content="Select file" HorizontalAlignment="Left" Margin="20,183,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Width="74" Click="btnSelectFile_Click"/>
 
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
