@@ -25,7 +25,7 @@ namespace Ait.FTSock.Client.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Test address")]
+        [global::System.Configuration.DefaultSettingValueAttribute("172.0.0.1")]
         public string LastServerIpAddress {
             get {
                 return ((string)(this["LastServerIpAddress"]));
