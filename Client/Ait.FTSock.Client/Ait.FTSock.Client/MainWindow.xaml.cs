@@ -192,7 +192,7 @@ namespace Ait.FTSock.Client
             if (selectedFile != null)
             {
                 lblFileName.Content = selectedFile.Name;
-                lblFileSize.Content = selectedFile.Size;
+                lblFileSize.Content = selectedFile.Size + " B";
                 lblFullPathFile.Content = selectedFile.FullPath;
                 lblDate.Content = selectedFile.CreationDate;
             }
