@@ -1,2 +1,1 @@
-AIT PE2 Sockets
-Client & server
+Client & server app die kan communiceren met elkaar.
